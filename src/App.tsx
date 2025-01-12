@@ -40,7 +40,11 @@ function App() {
       <div className="max-w-7xl mx-auto mb-8">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            <img src="/src/koinx.png" alt="KoinX" className="h-20" />
+              <img 
+                src="https://www.koinx.com/releases/_next/static/media/Logo.cdf70f30.svg" 
+                alt="KoinX" 
+                className="h-8" 
+    />
           </div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-gray-600 hover:text-gray-900 flex items-center gap-1">

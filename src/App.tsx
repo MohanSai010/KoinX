@@ -40,13 +40,13 @@ function App() {
       <div className="max-w-7xl mx-auto mb-8">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-              <img 
-                src="https://www.koinx.com/releases/_next/static/media/Logo.cdf70f30.svg" 
-                alt="KoinX" 
-                className="h-8" 
-    />
+            <img
+              src="https://www.koinx.com/releases/_next/static/media/Logo.cdf70f30.svg"
+              alt="KoinX"
+              className="h-8"
+            />
           </div>
-          <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6">
             <a href="#" className="text-gray-600 hover:text-gray-900 flex items-center gap-1">
               <Calculator className="w-4 h-4" />
               Crypto Taxes
@@ -63,8 +63,26 @@ function App() {
               Get Started
             </button>
           </div>
+          {/* Mobile Navigation */}
+          <div className="flex md:hidden">
+            <button className="text-gray-600 hover:text-gray-900">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 7.5h16.5M3.75 12h16.5m-16.5 4.5h16.5"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-
 
         {/* Price Info */}
         <div className="bg-white rounded-lg p-6">
@@ -79,7 +97,9 @@ function App() {
                 <span className="text-2xl font-semibold">
                   ${prices?.bitcoin.usd.toLocaleString()}
                 </span>
-                <span className={`flex items-center gap-1 ${isPositive ? 'text-green-500' : 'text-red-500'}`}>
+                <span
+                  className={`flex items-center gap-1 ${isPositive ? 'text-green-500' : 'text-red-500'}`}
+                >
                   {isPositive ? <ArrowUp size={16} /> : <ArrowDown size={16} />}
                   {Math.abs(priceChange).toFixed(2)}%
                 </span>
